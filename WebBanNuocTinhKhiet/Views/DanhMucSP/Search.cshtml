@@ -1,0 +1,143 @@
+﻿@model List<WebBanNuocTinhKhiet.Models.SANPHAM1>
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="breadcrumbs bg-light">
+    <div class="container">
+        <ul class="breadcrumb m-0 pl-0 pr-0 pt-2 pb-2 small">
+            <li class="home">
+                <a href="/Home/Index" title="Trang chủ">
+                    Trang chủ
+                </a>
+                <span class="slash-divider ml-2 mr-2 font-weight-normal">/</span>
+            </li>
+            <li>Tìm kiếm sản phẩm</li>
+        </ul>
+    </div>
+</div>
+<body class="body" style="background-color: aliceblue;">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col">
+                    Tên sản phẩm
+                </th>
+                <th scope="col">
+                    Giá cũ
+                </th>
+                <th scope="col">
+                    Giá đặc biệt
+                </th>
+                <th scope="col">
+                    Ảnh 1
+                </th>
+                <th scope="col">
+                    Mô tả sản phẩm
+                </th>
+                <th scope="col">
+                    Ngày sản xuất
+                </th>
+                <th scope="col">
+                    Ảnh 2
+                </th>
+                <th scope="col">
+                    Dung tích sản phẩm
+                </th>
+                <th scope="col">
+                    Tên thương hiệu
+                </th>
+                <th scope="col">
+                    Loại sản phẩm
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenSP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiaCu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiaDB)
+                </td>
+                <td class="img">
+                    <img src="@Html.DisplayFor(modelItem => item.Anh)" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoTa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgaySX)
+                </td>
+                <td class="img">
+                    <img src="@Html.DisplayFor(modelItem => item.Anh2)" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DungTichSP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaThuongHieu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaChiTietSP)
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="6">
+                @{
+                    int PrevPage = ViewBag.page - 1;
+                    if (PrevPage <= 0)
+                    {
+                        PrevPage = 1;
+                    }
+                    int NextPage = ViewBag.page + 1;
+                    if (NextPage > ViewBag.Pages)
+                    {
+                        NextPage = ViewBag.Pages;
+                    }
+
+                }
+                <ul class="pagination justify-content-center">
+                    <li class="page-item active">
+                        <a class="page-link" href="/DanhMucSP/Search/Index?sortColumn=@ViewBag.sortColumn&page=@PrevPage">
+                            Prev
+                        </a>
+                    </li>
+                    @for (int i = 0; i < ViewBag.Pages; i++)
+                    {
+
+                        if (i + 1 == ViewBag.page)
+                        {
+                            <li class="page-item active">
+                                <a class="page-link" href="/DanhMucSP/Search/Index?sortColumn=@ViewBag.sortColumn&page=@(i+1)">
+                                    @(i + 1)
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="/DanhMucSP/Search/Index?sortColumn=@ViewBag.sortColumn&page=@(i+1)">
+                                    @(i + 1)
+                                </a>
+                            </li>
+                        }
+
+                    }
+                    <li class="page-item active">
+                        <a class="page-link" href="/DanhMucSP/Search/Index?sortColumn=@ViewBag.sortColumn&page=@NextPage">
+                            Next
+                        </a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    </body>

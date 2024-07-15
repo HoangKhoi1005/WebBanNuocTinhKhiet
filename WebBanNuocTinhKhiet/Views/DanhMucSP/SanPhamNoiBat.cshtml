@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "SanPhamNoiBat";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+
+<li class="filter-item filter-item--check-box">
+    <label class="d-flex align-items-baseline pt-1 pb-1 m-0">
+        <input type="radio" class="d-none sortby-default" name="sortBy" onclick="sortby('default')" @if (ViewBag.sortColumn == "MaSP" || ViewBag.sortColumn == "Id") { <text> checked="checked" </text> }>
+        @Html.ActionLink("Mặc định", "SanPhamNoiBat", new { sortColumn = "MaSP" }, new { @class = " sortby-default fa2 px-2 py-1 rounded border" })
+    </label>
+</li>
+<li class="filter-item filter-item--check-box">
+    <label class="d-flex align-items-baseline pt-1 pb-1 m-0">
+        <input type="radio" class="d-none sortby-default" name="sortBy" onclick="sortby('alpha-asc')" @if (ViewBag.sortColumn == "TenSP") { <text> checked="checked" </text> }>
+        @Html.ActionLink("A → Z", "SanPhamNoiBat", new { sortColumn = "TenSP" }, new { @class = "sortby-alpha-asc fa2 px-2 py-1 rounded border" })
+    </label>
+</li>
+<li class="filter-item filter-item--check-box">
+    <label class="d-flex align-items-baseline pt-1 pb-1 m-0">
+        <input type="radio" class="d-none sortby-default" name="sortBy" onclick="sortby('alpha-desc')" @if (ViewBag.sortColumn == "TenSPGiam") { <text> checked="checked" </text> }>
+        @Html.ActionLink("Z → A", "SanPhamNoiBat", new { sortColumn = "TenSPGiam" }, new { @class = " sortby-alpha-desc fa2 px-2 py-1 rounded border" })
+    </label>
+</li>
+<li class="filter-item filter-item--check-box">
+    <label class="d-flex align-items-baseline pt-1 pb-1 m-0">
+        <input type="radio" class="d-none sortby-default" name="sortBy" onclick="sortby('price-asc')" @if (ViewBag.sortColumn == "GiaTang") { <text> checked="checked" </text> }>
+        @Html.ActionLink("Giá tăng dần", "SanPhamNoiBat", new { sortColumn = "GiaTang" }, new { @class = " sortby-price-asc fa2 px-2 py-1 rounded border" })
+    </label>
+</li>
+<li class="filter-item filter-item--check-box">
+    <label class="d-flex align-items-baseline pt-1 pb-1 m-0">
+        <input type="radio" class="d-none sortby-default" name="sortBy" onclick="sortby('price-desc')" @if (ViewBag.sortColumn == "GiaGiam") { <text> checked="checked" </text> }>
+        @Html.ActionLink("Giá giảm dần", "SanPhamNoiBat", new { sortColumn = "GiaGiam" }, new { @class = " sortby-price-desc fa2 px-2 py-1 rounded border" })
+    </label>
+</li>
+<li class="filter-item filter-item--check-box">
+    <label class="d-flex align-items-baseline pt-1 pb-1 m-0">
+        <input type="radio" class="d-none sortby-default" name="sortBy" onclick="sortby('created-asc')" @if (ViewBag.sortColumn == "NgayMoi") { <text> checked="checked" </text> }>
+        @Html.ActionLink("Mới nhất", "SanPhamNoiBat", new { sortColumn = "NgayMoi" }, new { @class = " sortby-created-asc fa2 px-2 py-1 rounded border" })
+    </label>
+</li>
+<li class="filter-item filter-item--check-box">
+    <label class="d-flex align-items-baseline pt-1 pb-1 m-0">
+        <input type="radio" class="d-none sortby-default" name="sortBy" onclick="sortby('created-desc')" @if (ViewBag.sortColumn == "NgayCu") { <text> checked="checked" </text> }>
+        @Html.ActionLink("Cũ nhất", "SanPhamNoiBat", new { sortColumn = "NgayCu" }, new { @class = " sortby-created-desc fa2 px-2 py-1 rounded border" })
+    </label>
+</li>

@@ -1,0 +1,100 @@
+﻿@model WebBanNuocTinhKhiet.Models.SANPHAM1
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage1.cshtml";
+}
+
+<body style="background-color:aliceblue">
+
+    @using (Html.BeginForm("Update", "SanPham", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6">
+                @Html.LabelFor(model => model.TenSP, "Tên sản phẩm")
+                @Html.TextBoxFor(model => model.TenSP, new { @class = "form-control" , placeholder = "TenSP", value = @Model.TenSP})
+                @Html.ValidationMessageFor(model => model.TenSP, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6">
+                @Html.LabelFor(model => model.MoTa, "Mô tả sản phẩm")
+                @Html.TextBoxFor(model => model.MoTa, new { @class = "form-control", placeholder = "MoTa", value = @Model.MoTa })
+                @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6">
+                @Html.LabelFor(model => model.DungTichSP, " Dung tích sản phẩm")
+                @Html.TextBoxFor(model => model.DungTichSP, new { @class = "form-control", placeholder = "DungTichSP", value = @Model.DungTichSP })
+                @Html.ValidationMessageFor(model => model.DungTichSP, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6">
+                @Html.LabelFor(model => model.GiaDB, "Giá đặc biệt")
+                @Html.TextBoxFor(model => model.GiaDB, new { @class = "form-control", placeholder = "GiaDB", value = @Model.GiaDB })
+                @Html.ValidationMessageFor(model => model.GiaDB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6">
+                @Html.LabelFor(model => model.GiaCu, "Giá cũ sản phẩm")
+                @Html.TextBoxFor(model => model.GiaCu, new { @class = "form-control", placeholder = "GiaCu", value = @Model.GiaCu })
+                @Html.ValidationMessageFor(model => model.GiaCu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6">
+                @Html.LabelFor(model => model.Anh, "Chọn hình 1")
+                <input type="file" name="imageFile1" id="imageFile1" class="form-control" value="@Model.Anh" />
+                @Html.ValidationMessageFor(model => model.Anh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6">
+                @Html.LabelFor(model => model.Anh2, "Chọn hình 2")
+                <input type="file" name="imageFile2" id="imageFile2" class="form-control"  value="@Model.Anh2"/>
+                @Html.ValidationMessageFor(model => model.Anh2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6">
+                @Html.LabelFor(model => model.NgaySX, "Ngày sản xuất")
+                @Html.TextBoxFor(model => model.NgaySX, new { @class = "form-control", placeholder = "NgaySX", value = @Model.NgaySX })
+                @Html.ValidationMessageFor(model => model.NgaySX, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6">
+                @Html.LabelFor(model => model.MaThuongHieu, "Thương hiệu")
+                @Html.TextBoxFor(model => model.MaThuongHieu, new { @class = "form-control", placeholder = "MaThuongHieu", value = @Model.MaThuongHieu })
+                @Html.ValidationMessageFor(model => model.MaThuongHieu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6">
+                @Html.LabelFor(model => model.MaChiTietSP, "Loại sản phẩm")
+                @Html.TextBoxFor(model => model.MaChiTietSP, new { @class = "form-control", placeholder = "MaChiTietSP", value = @Model.MaChiTietSP })
+                @Html.ValidationMessageFor(model => model.MaChiTietSP, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6">
+                <button type="submit" class="btn btn-primary">Sửa sản phẩm</button>
+            </div>
+        </div>
+    }
+
+</body>

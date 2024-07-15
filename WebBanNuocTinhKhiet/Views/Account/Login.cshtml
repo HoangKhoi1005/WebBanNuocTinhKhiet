@@ -1,0 +1,177 @@
+﻿@model WebBanNuocTinhKhiet.ViewModel.LoginVM
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<head>
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <title>
+        Đăng ký tài khoản
+
+
+    </title>
+
+    <style>
+        :root {
+            --menuWidth: calc(100% - 20px);
+            --leftColBackground: #fff;
+            --lightLeftColBackground: #eef3f9; /*+5%*/
+            --darkLeftColBackground: #22272b; /*-5%*/
+            --mainColor: #062e88;
+            --mainColor2: #15a9e7;
+            --menuHover: #b6ccff;
+            --accentColor1: #929292;
+            --accentColor2: #15a9e7; /*Màu giá*/
+            --textColor: #000000;
+            --toastSuccessBg: #d1e7dd;
+            --toastSuccessCl: #0f5132;
+            --toastWarningBg: #fff3cd;
+            --toastWarningCl: #664d03;
+            --toastErrorBg: #f8d7da;
+            --toastErrorCl: #842029;
+            --toastSystemBg: #d3d3d4;
+            --toastSystemCl: #141619;
+        }
+        /* vietnamese */
+
+    </style>
+    <link href="~/Content/assets/bootstrap.scssa3fa.css" rel="stylesheet" />
+    <link href="~/Content/assets/swiper.scssa3fa.css" rel="stylesheet" />
+    <link href="~/Content/assets/mew_style_gb.scssa3fa.css" rel="stylesheet" />
+    <link href="~/Content/assets/noindex.scssa3fa.css" rel="stylesheet" />
+    <link href="~/Content/assets/mew_noti.scssa3fa.css" rel="stylesheet" />
+
+
+
+
+    <script>
+        var Bizweb = Bizweb || {};
+        Bizweb.store = 'mewaqua.mysapo.net';
+        Bizweb.id = 479406;
+        Bizweb.theme = { "id": 897580, "name": "MewAQUA", "role": "main" };
+        Bizweb.template = 'customers/register';
+        if (!Bizweb.fbEventId) Bizweb.fbEventId = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    </script>
+    <script>
+        (function () {
+            function asyncLoad() {
+                var urls = [];
+                for (var i = 0; i < urls.length; i++) {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = urls[i];
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                }
+            };
+            window.attachEvent ? window.attachEvent('onload', asyncLoad) : window.addEventListener('load', asyncLoad, false);
+        })();
+    </script>
+
+
+    <script>
+        window.BizwebAnalytics = window.BizwebAnalytics || {};
+        window.BizwebAnalytics.meta = window.BizwebAnalytics.meta || {};
+        window.BizwebAnalytics.meta.currency = 'VND';
+        window.BizwebAnalytics.tracking_url = '../s.html';
+
+        var meta = {};
+
+
+        for (var attr in meta) {
+            window.BizwebAnalytics.meta[attr] = meta[attr];
+        }
+    </script>
+
+    <script src="~/Content/bootstrap@5.0.2/dist/js/stats.minb066.js"></script>
+    <script src="~/Content/jquery/3.6.0/jquery.min.js"></script>
+    <link href="~/Content/assets/custom.scssa3fa.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap@5.0.2/dist/js/common.js"></script>
+    <script src="~/Content/bootstrap@5.0.2/dist/js/bizweb-api.js"></script>
+    <script src="~/Content/bootstrap@5.0.2/dist/js/customer.js"></script>
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+    </style>
+</head>
+<body class="">
+
+    <section class="register-layout d-flex align-items-center justify-content-center">
+        <div class="box_log position-relative border-mew">
+            <div class="b_big position-relative pl-xl-5 pr-xl-5 pt-xl-4 pb-xl-4 p-3 squa-mew">
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                {
+                    <input name="FormType" type="hidden" value="customer_register" /><input name="utf8" type="hidden" value="true" /><input type="hidden" id="Token-b7194b575dc14c0c84ee62a27be78cdc" name="Token" />
+                    <script src="../../www.google.com/recaptcha/apif78f.js?render=6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK"></script>
+                    <script>grecaptcha.ready(function () { grecaptcha.execute("6Ldtu4IUAAAAAMQzG1gCw3wFlx_GytlZyLrXcsuK", { action: "customer_register" }).then(function (token) { document.getElementById("Token-b7194b575dc14c0c84ee62a27be78cdc").value = token }); });</script>
+                    <h2 class="font-weight-bold m-0 whites text-center">Đăng nhập</h2>
+                    <ul class="breadcrumb whites d-flex justify-content-center pl-0 pr-0 mb-2 w-100 small">
+                        <li class="home">
+                            <a href="/Home/Index" title="MewAQUA">Trang chủ</a>
+                            <span class="slash-divider ml-1 mr-1">/</span>
+                        </li>
+                        <li>Đăng nhập tài khoản</li>
+                    </ul>
+                    <div class="form-signup text-danger mb-2 text-center">
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.UserName, new { @class = "d-none col-form-label" })
+                        @Html.TextBoxFor(m => m.UserName, new { @placeholder = "Tên đăng nhập", @class = "border-mew mew-control" })
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "d-none col-form-label" })
+                        @Html.PasswordFor(m => m.Password, new { @placeholder = "Mật khẩu", @class = "border-mew mew-control" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <button type="submit" class="btn btn-primary border-mew mew-control font-weight-bold btn_login max_width">Đăng nhập</button>
+                        <a href="#recover" class="whites font-weight-bold" onclick="toggleRecoverPasswordForm();return false;" id="RecoverPassword">Quên mật khẩu?</a>
+                    </div>
+                }
+
+                <div class="login_isocial">
+                    <div class="log_iso position-relative text-center">
+                        <span class="d-inline-block position-relative">Hoặc đăng nhập qua</span>
+                    </div>
+                    <script>function loginFacebook() { var a = { client_id: "947410958642584", redirect_uri: "https://store.mysapo.net/account/facebook_account_callback", state: JSON.stringify({ redirect_url: window.location.href }), scope: "email", response_type: "code" }, b = "https://www.facebook.com/v3.2/dialog/oauth" + encodeURIParams(a, !0); window.location.href = b } function loginGoogle() { var a = { client_id: "997675985899-pu3vhvc2rngfcuqgh5ddgt7mpibgrasr.apps.googleusercontent.com", redirect_uri: "https://store.mysapo.net/account/google_account_callback", scope: "email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile", access_type: "online", state: JSON.stringify({ redirect_url: window.location.href }), response_type: "code" }, b = "https://accounts.google.com/o/oauth2/v2/auth" + encodeURIParams(a, !0); window.location.href = b } function encodeURIParams(a, b) { var c = []; for (var d in a) if (a.hasOwnProperty(d)) { var e = a[d]; null != e && c.push(encodeURIComponent(d) + "=" + encodeURIComponent(e)) } return 0 == c.length ? "" : (b ? "?" : "") + c.join("&") }</script>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <a href="javascript:void(0)" class="social-login--facebook" onclick="loginFacebook()"><img width="129px" height="37px" alt="facebook-login-button" src="http://bizweb.dktcdn.net/assets/admin/images/login/fb-btn.svg"></a>
+                        <a href="javascript:void(0)" class="social-login--google" onclick="loginGoogle()"><img width="129px" height="37px" alt="google-login-button" src="http://bizweb.dktcdn.net/assets/admin/images/login/gp-btn.svg"></a>
+                    </div>
+                </div>
+                <div class="new-users">
+                    <h3 class="font-weight-bold mb-3 mt-4 text-white text-center">Đăng ký</h3>
+                    <div class="content">
+                        <p class="line_cus whites text-center">Tạo tài khoản để quản lý đơn hàng, và các thông tin thanh toán, gửi hàng một cách đơn giản hơn.</p>
+                        <div class="buttons-set text-center">
+                            <button class="btn btn-primary border-mew mew-control font-weight-bold mb-2" onclick="window.location.href='/Account/Register'">Tạo tài khoản</button>
+                            <button class="btn btn-primary border-mew mew-control font-weight-bold" onclick="window.location.href='/Home/Index.html'">Quay về trang chủ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var formRecoverPassword = $("#recover_password"),
+            formLogin = $("#customer_login"),
+            notiRecoverSuccess = $("#note-reset");
+        function toggleRecoverPasswordForm() {
+            formRecoverPassword.toggleClass("d-none");
+            formLogin.toggleClass("d-none");
+        }
+        if (window.location.hash == "#recover") { toggleRecoverPasswordForm() }
+    </script>
+</body>

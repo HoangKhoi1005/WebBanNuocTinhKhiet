@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SanPhamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CHITIETSP">
+    <Key>
+      <PropertyRef Name="MaChiTietSP" />
+    </Key>
+    <Property Name="MaChiTietSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoaiSP" Type="nvarchar" MaxLength="50" />
+    <Property Name="DungTichSP" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenSP" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GiaCu" Type="money" Nullable="false" />
+    <Property Name="GiaDB" Type="money" Nullable="false" />
+    <Property Name="Anh" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MoTa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NgaySX" Type="date" Nullable="false" />
+    <Property Name="Anh2" Type="nvarchar(max)" />
+    <Property Name="MaThuongHieu" Type="int" />
+    <Property Name="MaChiTietSP" Type="int" />
+  </EntityType>
+  <EntityType Name="THUONGHIEU">
+    <Key>
+      <PropertyRef Name="MaThuongHieu" />
+    </Key>
+    <Property Name="MaThuongHieu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenThuongHieu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_SanPham_CHITIETSP">
+    <End Role="CHITIETSP" Type="Self.CHITIETSP" Multiplicity="0..1" />
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHITIETSP">
+        <PropertyRef Name="MaChiTietSP" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaChiTietSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_THUONGHIEU">
+    <End Role="THUONGHIEU" Type="Self.THUONGHIEU" Multiplicity="0..1" />
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THUONGHIEU">
+        <PropertyRef Name="MaThuongHieu" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaThuongHieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SanPhamModelStoreContainer">
+    <EntitySet Name="CHITIETSP" EntityType="Self.CHITIETSP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THUONGHIEU" EntityType="Self.THUONGHIEU" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_SanPham_CHITIETSP" Association="Self.FK_SanPham_CHITIETSP">
+      <End Role="CHITIETSP" EntitySet="CHITIETSP" />
+      <End Role="SanPham" EntitySet="SanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_THUONGHIEU" Association="Self.FK_SanPham_THUONGHIEU">
+      <End Role="THUONGHIEU" EntitySet="THUONGHIEU" />
+      <End Role="SanPham" EntitySet="SanPham" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

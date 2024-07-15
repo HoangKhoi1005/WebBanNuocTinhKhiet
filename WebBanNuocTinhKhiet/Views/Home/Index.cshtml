@@ -1,0 +1,649 @@
+﻿@model List<WebBanNuocTinhKhiet.Models.SANPHAM1>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<link href="~/Content/assets/swiper.scssa3fa.css" rel="stylesheet" />
+<link href="~/Content/assets/bootstrap.scssa3fa.css" rel="stylesheet" />
+<link href="~/Content/assets/mew_style_gb.scssa3fa.css" rel="stylesheet" />
+<link href="~/Content/assets/mew_style_index.scssa3fa.css" rel="stylesheet" />
+<link href="~/Content/assets/StyleSheet1.css" rel="stylesheet" />
+<script src="~/Content/assets/cash.mina3fa.js"></script>
+<script src="~/Content/assets/axios.mina3fa.js"></script>
+<script src="~/Content/assets/stats.minb066.js"></script>
+<link href="~/Content/assets/mew_search.scssa3fa.css" rel="stylesheet" />
+<script src="~/Content/assets/mew_searcha3fa.js"></script>
+<script src="~/Content/assets/mew_notia3fa.js"></script>
+
+<h1 class="d-none">MewAQUA</h1>
+<section class="mew_mobile_slide mb-4">
+    <div class="container">
+        <div class="mew_slide swiper-container position-relative">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide text-center rounded-main modal-open">
+                    <a class="d-block w-100 h-100 modal-open" href="#" title="MewAQUA">
+                        <picture class="position-relative w-100 m-0 ratio2by1 d-block aspect">
+                            <source media="(min-width: 1200px)" srcset="~/Content/assets/slide-img1a3fa.png">
+                            <source media="(min-width: 992px)" srcset="~/Content/assets/slide-img1a3fa.png">
+                            <source media="(max-width: 569px)" srcset="~/Content/assets/slide-img1a3fa.png">
+                            <source media="(max-width: 480px)" srcset="~/Content/assets/slide-img1a3fa.png">
+                            <img class="d-block img img-cover position-absolute" src="~/Content/assets/slide-img1a3fa.png" alt="MewAQUA" />
+                        </picture>
+                    </a>
+                </div>
+                <div class="swiper-slide text-center rounded-main modal-open">
+                    <a class="d-block w-100 h-100 modal-open" href="#" title="MewAQUA">
+                        <picture class="position-relative w-100 m-0 ratio2by1 d-block aspect">
+                            <source media="(min-width: 1200px)" srcset="~/Content/assets/slide-img2a3fa.png">
+                            <source media="(min-width: 992px)" srcset="~/Content/assets/slide-img2a3fa.png">
+                            <source media="(max-width: 569px)" srcset="~/Content/assets/slide-img2a3fa.png">
+                            <source media="(max-width: 480px)" srcset="~/Content/assets/slide-img2a3fa.png">
+                            <img class="d-block img img-cover position-absolute" src="~/Content/assets/slide-img2a3fa.png" alt="MewAQUA" />
+                        </picture>
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-button-prev msl_prev"></div>
+            <div class="swiper-button-next msl_next"></div>
+        </div>
+    </div>
+</section>
+<section class="product_poli_wrap mt-5">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-lg-6 order-lg-1 pt-4 pb-0 pb-sm-4">
+                <h4 class="font-weight-bold mb-3">
+                    <bor class="pb-1 d-inline-block text-white">
+                        Dịch vụ của chúng tôi
+                    </bor>
+                </h4>
+                <div class="summary mb-3 mb-lg-4 text-hover">
+                    Là đại lý chính thức của Tổng công ty Cổ phần Nước tinh khoáng tinh khiết thiên nhên MewAQUA (AQUA Trading), Đại lý nước tinh khiết tại 266 Đội Cấn, Ba Đình, Hà Nội cam kết cung cấp nước lọc, nước khoáng, nước tinh khiết với các tiêu chuẩn và dịch vụ sau:
+                </div>
+                <div class="row">
+                    <div class="col-6 col-lg-4 mb-3">
+                        <div class="item d-flex align-items-center h-100 ">
+                            <div class="mr-2 w-65px">
+                                <picture class="position-relative w-100 m-0 ratio1by1 d-block aspect">
+                                    <img class="d-block img img-cover position-absolute" src="~/Content/assets/img_poli_1a3fa.png" alt="Sản phẩm chính hãng" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="media-body font-weight-bold text-white">
+                                Sản phẩm chính hãng
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 mb-3">
+                        <div class="item d-flex align-items-center h-100 ">
+                            <div class="mr-2 w-65px">
+                                <picture class="position-relative w-100 m-0 ratio1by1 d-block aspect">
+                                    <img class="d-block img img-cover position-absolute" src="~/Content/assets/img_poli_2a3fa.png" alt="6 Giai đoạn lọc" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="media-body font-weight-bold text-white">
+                                6 Giai đoạn lọc
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 mb-3">
+                        <div class="item d-flex align-items-center h-100 ">
+                            <div class="mr-2 w-65px">
+                                <picture class="position-relative w-100 m-0 ratio1by1 d-block aspect">
+                                    <img class="d-block img img-cover position-absolute" src="~/Content/assets/img_poli_3a3fa.png" alt="Thành phần lành mạnh" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="media-body font-weight-bold text-white">
+                                Thành phần lành mạnh
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 mb-3">
+                        <div class="item d-flex align-items-center h-100 ">
+                            <div class="mr-2 w-65px">
+                                <picture class="position-relative w-100 m-0 ratio1by1 d-block aspect">
+                                    <img class="d-block img img-cover position-absolute" src="~/Content/assets/img_poli_4a3fa.png" alt="Kiểm soát hoàn toàn" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="media-body font-weight-bold text-white">
+                                Kiểm soát hoàn toàn
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 mb-3">
+                        <div class="item d-flex align-items-center h-100 ">
+                            <div class="mr-2 w-65px">
+                                <picture class="position-relative w-100 m-0 ratio1by1 d-block aspect">
+                                    <img class="d-block img img-cover position-absolute" src="~/Content/assets/img_poli_5a3fa.png" alt="Vận chuyển khép kín" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="media-body font-weight-bold text-white">
+                                Vận chuyển khép kín
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 mb-3">
+                        <div class="item d-flex align-items-center h-100 ">
+                            <div class="mr-2 w-65px">
+                                <picture class="position-relative w-100 m-0 ratio1by1 d-block aspect">
+                                    <img class="d-block img img-cover position-absolute" src="~/Content/assets/img_poli_6a3fa.png" alt="Tư vấn toàn diện" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="media-body font-weight-bold text-white">
+                                Tư vấn toàn diện
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="view_mores rounded-main bg-main modal-open d-inline-block py-2 px-4 mt-3 text-center position-relative" href="gioi-thieu" title="Đọc thêm">
+                    <b class="position-relative">Đọc thêm</b>
+                    <span></span><span></span><span></span><span></span>
+                </a>
+            </div>
+            <div class="col-10 col-lg-6 order-lg-0">
+                <picture class="position-relative w-100 m-0 ratio1by1 d-block aspect dance">
+                    <source media="(max-width: 480px)" srcset="~/Content/assets/bn_abouta3fa.png">
+                    <img class="d-block img img-cover position-absolute" src="~/Content/assets/bn_abouta3fa.png" alt="Dịch vụ của chúng tôi" />
+                </picture>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="m_product position-relative py-3 py-lg-5 modal-open">
+    <div class="container position-relative">
+        <div class="head_box pt-2 pl-2 pr-2 text-center pb-3">
+            <h2 class="title font-weight-bold position-relative mb-2 text-center">
+                <bor class="d-inline-block text-white">
+                    Sản Phẩm
+                </bor>
+            </h2>
+            <div class="sum_product mb-3 text-hover">
+                Tổng công ty Cổ phần Nước tinh khoáng tinh khiết thiên nhên MewAQUA (AQUA Trading)
+            </div>
+        </div>
+        <div class="mew_product_5 swiper-container">
+            <div class="swiper-wrapper">
+                @for (int i = 0; i < 8; i++)
+                {
+                    var product = Model[i];
+                    decimal giamGia = ((@product.GiaCu - @product.GiaDB) / @product.GiaCu) * 100;
+                    int giamGiaInt = (int)Math.Floor(giamGia);
+                    decimal giaDB = @product.GiaDB;
+                    decimal giaCu = @product.GiaCu;
+                    <div class="swiper-slide">
+                        <div class="product-item hover_shadow position-relative p-2 p-lg-3 rounded bg-white h-100 border">
+                            <div class="sale-label sale-top-right position-absolute font-weight-bold">
+                                Giảm @giamGiaInt%
+                            </div>
+                            <a href="/SanPham/Detail/@product.MaSP" class="thumb d-block modal-open position-relative" title="Nước khoáng lọc OASIS chai 2 lít">
+                                <div class="position-relative w-100 m-0 ratio1by1 has-edge aspect">
+                                    <img src="@Url.Content("~/Content/assets/placeholder_1x1a3fa.png")" data-src="@Url.Content(product.Anh)" class="d-block img img0 img1 img-cover position-absolute lazy" alt="Nước lọc AQUFINA chai 2 lít" decoding="async">
+                                    <img src="@Url.Content("~/Content/assets/placeholder_1x1a3fa.png")" data-src="@Url.Content(product.Anh2)" class="d-block img2 img-cover position-absolute lazy" alt="Nước lọc AQUFINA chai 2 lít" decoding="async">
+                                </div>
+                            </a>
+
+                            <div class="item-info mt-1 position-relative text-center">
+                                <h3 class="item-title">
+                                    <a class="line_2 font-weight-normal" href="/SanPham/Detail/@product.MaSP" title="Nước khoáng lọc OASIS chai 2 lít">
+                                        @product.TenSP
+                                    </a>
+                                </h3>
+                                <div class="item-price">
+                                    <span class="special-price font-weight-bold">@giaDB.ToString("N0").Replace(",", ".") đ</span>
+                                    <del class="old-price">@giaCu.ToString("N0").Replace(",", ".") đ</del>
+                                </div>
+                                <form action="/cart/add" method="post" enctype="multipart/form-data" class="mt-2 product-item_form d-none d-md-block">
+
+                                    <input type="hidden" name="productAlias" value="/nuoc-khoang-loc-oasis-chai-2-lit" />
+                                    <input type="hidden" name="variantId" value="82961932" />
+                                    <input type="hidden" name="quantity" value="1" class="form-control prd_quantity border rounded mb-2">
+                                    <button class="view_mores rounded-main position-relative modal-open bg-main2 btn px-3 py-2 js-addToCart d-inline-flex mx-auto" title="Đặt hàng ngay" type="button">
+                                        <b class="position-relative d-flex justify-content-center align-items-center">
+                                            <svg width="14" height="14" class="mr-2">
+                                                <use href="#svg-cart"></use>
+                                            </svg>
+                                            Đặt hàng ngay
+                                        </b>
+                                        <span></span><span></span><span></span><span></span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <a class="view_mores rounded-main bg-main modal-open d-inline-block py-2 px-4 mt-3 text-center position-relative" href="/DanhMucSP/Index" title="Đọc thêm">
+                <b class="position-relative">Xem tất cả</b>
+                <span></span><span></span><span></span><span></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<div class="bn_poli text-center">
+    <picture class="position-relative w-100 m-0 ratio1by6 d-block aspect">
+        <source media="(max-width: 480px)" srcset="~/Content/assets/water_pr.png">
+        <img src="~/Content/assets/water_pr.png" alt="Sản Phẩm" />
+    </picture>
+</div>
+<section class="m_banner py-3 py-lg-5">
+    <div class="container text-center text-white">
+        <h2 class="title font-weight-bold position-relative mb-2 text-center">
+            <bor class="pb-1 d-inline-block text-white">
+                Thành phần khoáng chất
+            </bor>
+        </h2>
+        <p class="text-lg-center mb-4 text-hover">
+            Thành phân khoáng chất cao có trong nước lọc đóng chai - MewAQUA
+        </p>
+        <div class="row align-items-center">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-6 text-lg-left">
+                <div class="item_comp mb-3 mb-lg-5">
+                    <h4 class=" text-white tit_comp mb-1">
+                        Calcium+
+                    </h4>
+                    <p class="sub_comp text-main2 font-weight-bold mb-2">5-12 mg/dm3</p>
+                    <div class="sum_comp text-hover line_3">
+                        Calci là một thành phần quan trọng của khẩu phần dinh dưỡng.
+                    </div>
+                </div>
+                <div class="item_comp mb-3 mb-lg-5">
+                    <h4 class=" text-white tit_comp mb-1">
+                        Magnesium
+                    </h4>
+                    <p class="sub_comp text-main2 font-weight-bold mb-2">2-5 mg/dm3</p>
+                    <div class="sum_comp text-hover line_3">
+                        Magnesi hữu cơ là quan trọng cho cả thực vật và động vật
+                    </div>
+                </div>
+                <div class="item_comp mb-3 mb-lg-0">
+                    <h4 class=" text-white tit_comp mb-1">
+                        Sodium
+                    </h4>
+                    <p class="sub_comp text-main2 font-weight-bold mb-2">20-25 mg/dm3</p>
+                    <div class="sum_comp text-hover line_3">
+                        Kim loại kiềm này là thành phần của natri chloride (NaCl, muối ăn) là một chất quan trọng cho sự sống
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-none d-lg-block col-lg-6 text-center">
+                <picture class="position-relative w-100 m-0 ratio1by1 d-block aspect">
+                    <source media="(max-width: 480px)" srcset="~/Content/assets/compositiona3fa.png">
+                    <img src="~/Content/assets/composition.png" />
+                </picture>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-6 text-lg-right">
+                <div class="item_comp mb-3 mb-lg-5">
+                    <h4 class=" text-white tit_comp mb-1">
+                        Chlorine
+                    </h4>
+                    <p class="sub_comp text-main2 font-weight-bold mb-2">~46 mg/dm3</p>
+                    <div class="sum_comp text-hover line_3">
+                        Chlor là một hóa chất quan trọng trong làm tinh khiết nước, trong việc khử trùng hay tẩy trắng
+                    </div>
+                </div>
+                <div class="item_comp mb-3 mb-lg-5">
+                    <h4 class=" text-white tit_comp mb-1">
+                        Potassium
+                    </h4>
+                    <p class="sub_comp text-main2 font-weight-bold mb-2">6,8-7,3mg/dm3</p>
+                    <div class="sum_comp text-hover line_3">
+                        Cation kali là dưỡng chất thiết yếu cho con người và sức khỏe
+                    </div>
+                </div>
+                <div class="item_comp mb-3 mb-lg-0">
+                    <h4 class=" text-white tit_comp mb-1">
+                        Sulphates
+                    </h4>
+                    <p class="sub_comp text-main2 font-weight-bold mb-2">5-12 mg/dm3</p>
+                    <div class="sum_comp text-hover line_3">
+                        Các muối sunfat là một thành phần tồn tại rộng rãi trong tự nhiên
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mew_reviews py-3 py-lg-5 position-relative lazy_bg" data-background="url(~/Content/assets/bn_reviewa3fa.png)">
+    <div class="container my-3 my-lg-5 position-relative">
+        <h3 class="title font-weight-bold position-relative pb-2 pb-lg-3 mb-4  text-center">
+            <bor class="pb-1 d-inline-block text-white">
+                Khách hàng với chúng tôi
+            </bor>
+        </h3>
+        <div class="m_people swiper-container pb-5">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide item_yk">
+                    <div class="content_tip text-center mx-auto p-3 rounded_module">
+                        <div class="imga d-flex align-items-center mx-auto mb-3">
+                            <div class="i_fm modal-open rounded-circle">
+                                <picture class="position-relative w-100 m-0 ratio1by1 d-block aspect">
+                                    <source media="(max-width: 480px)" srcset="http://bizweb.dktcdn.net/thumb/small/100/479/406/themes/897580/assets/ykkh_1.jpg">
+                                    <img class="d-block img img-cover position-absolute lazy" src="~/Content/assets/placeholder_1x1a3fa.png" data-src="~/Content/assets/ykkh_1.jpg" alt="Trang Xinh">
+                                </picture>
+                            </div>
+                            <div class="i_ff text-left ml-2">
+                                <p class="name font-weight-bold m-0">Trang Xinh</p>
+
+                                <span class="w">CEO Hẻm Khói</span>
+
+                            </div>
+                        </div>
+                        <div class="hgroup position-relative">
+                            <p class="jt text-justify">Mew AQUA cung cấp nước uống chất lượng tuyệt vời đảm bảo an toàn, uy tín cao. Quy trình chuyên nghiệp, vận chuyển nhanh chóng, tôi rất hài lòng với các bạn. Rất vui và sẽ hợp tác lâu dài với các bạn, cảm ơn rất nhiều.</p>
+                            <svg width="20px" height="20px" class="i_quote position-absolute"><use xlink:href="#quote"></use></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide item_yk">
+                    <div class="content_tip text-center mx-auto p-3 rounded_module">
+                        <div class="imga d-flex align-items-center mx-auto mb-3">
+                            <div class="i_fm modal-open rounded-circle">
+                                <picture class="position-relative w-100 m-0 ratio1by1 d-block aspect">
+                                    <source media="(max-width: 480px)" srcset="http://bizweb.dktcdn.net/thumb/small/100/479/406/themes/897580/assets/ykkh_2.jpg">
+                                    <img class="d-block img img-cover position-absolute lazy" src="~/Content/assets/placeholder_1x1a3fa.png" data-src="~/Content/assets/ykkh_2.jpg" alt="Giang Đoàn">
+                                </picture>
+                            </div>
+                            <div class="i_ff text-left ml-2">
+                                <p class="name font-weight-bold m-0">Giang Đoàn</p>
+
+                                <span class="w">CEO EXCel</span>
+
+                            </div>
+                        </div>
+                        <div class="hgroup position-relative">
+                            <p class="jt text-justify">Mew AQUA cung cấp nước uống chất lượng tuyệt vời đảm bảo an toàn, uy tín cao. Quy trình chuyên nghiệp, vận chuyển nhanh chóng, tôi rất hài lòng với các bạn. Rất vui và sẽ hợp tác lâu dài với các bạn, cảm ơn rất nhiều.</p>
+                            <svg width="20px" height="20px" class="i_quote position-absolute"><use xlink:href="#quote"></use></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide item_yk">
+                    <div class="content_tip text-center mx-auto p-3 rounded_module">
+                        <div class="imga d-flex align-items-center mx-auto mb-3">
+                            <div class="i_fm modal-open rounded-circle">
+                                <picture class="position-relative w-100 m-0 ratio1by1 d-block aspect">
+                                    <source media="(max-width: 480px)" srcset="http://bizweb.dktcdn.net/thumb/small/100/479/406/themes/897580/assets/ykkh_3.jpg">
+                                    <img class="d-block img img-cover position-absolute lazy" src="~/Content/assets/placeholder_1x1a3fa.png" data-src="~/Content/assets/ykkh_3.jpg" alt="Trung Nguyễn">
+                                </picture>
+                            </div>
+                            <div class="i_ff text-left ml-2">
+                                <p class="name font-weight-bold m-0">Trung Nguyễn</p>
+
+                                <span class="w">CEO OS Crew</span>
+
+                            </div>
+                        </div>
+                        <div class="hgroup position-relative">
+                            <p class="jt text-justify">Mew AQUA cung cấp nước uống chất lượng tuyệt vời đảm bảo an toàn, uy tín cao. Quy trình chuyên nghiệp, vận chuyển nhanh chóng, tôi rất hài lòng với các bạn. Rất vui và sẽ hợp tác lâu dài với các bạn, cảm ơn rất nhiều.</p>
+                            <svg width="20px" height="20px" class="i_quote position-absolute"><use xlink:href="#quote"></use></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination mrv_pagi"></div>
+        </div>
+    </div>
+</section>
+<section class="m_blog py-3 py-lg-5">
+    <div class="container text-center">
+        <h2 class="title font-weight-bold position-relative mb-2 text-center">
+            <bor class="d-inline-block text-white">
+                Tin tức
+            </bor>
+        </h2>
+        <a class="summary mb-3 mb-lg-4 text-hover d-inline-block" href="tin-tuc" title="Xem tất cả">
+            Xem tất cả >>
+        </a>
+        <div class="b_blog">
+            <div class="mew_blog swiper-container position-relative pb-4">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide mb-2 h-auto">
+                        <div class="bg-white bor-10 border h-100 item_grid p-2 position-relative">
+                            <div class="img_thm position-relative modal-open">
+                                <a href="/mua-nuoc-khoang-o-dau-de-dam-bao-chat-luong" title="Mua nước khoáng ở đâu để đảm bảo chất lượng?" class="effect-ming">
+                                    <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect bor-10">
+                                        <img src="~/Content/assets/placeholder_1x1a3fa.png" data-src="https:http://bizweb.dktcdn.net/100/479/406/articles/3.jpg?v=1677755528357" class="lazy d-block img img-cover position-absolute" alt="Mua nước khoáng ở đâu để đảm bảo chất lượng?">
+                                        <div class="position-absolute w-100 h-100 overlay"></div>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="cont pt-3 text-center">
+                                <h3 class="title_blo font-weight-boldmb-0">
+                                    <a class="line_2 h-auto" href="/mua-nuoc-khoang-o-dau-de-dam-bao-chat-luong" title="Mua nước khoáng ở đâu để đảm bảo chất lượng?">Mua nước khoáng ở đâu để đảm bảo chất lượng?</a>
+                                </h3>
+                                <div class="entry-date small text-center text-muted mb-2">
+                                    <svg width="13" height="13">
+                                        <use href="#svg-user" />
+                                    </svg>
+                                    Mew Theme
+                                    <svg width="13" height="13" class="ml-2">
+                                        <use href="#svg-time" />
+                                    </svg>
+                                    02/03/2023
+                                </div>
+
+
+                                <div class="line_top mb-3 sum line_2 h-auto text-center">
+                                    Vì các loại nước khoáng có chứa nhiều khoáng chất tốt cho sức khỏe của người sử dụng nên rất được ưa chuộng. Do nhu cầu sử dụng ngày càng cao nên thị trường xuất hiện rất nhiều cơ sở cung cấp nước khoáng kém chất lượng, không vệ sinh, không đạt tiêu chuẩn, điều đó khiến một số khách...
+                                </div>
+
+                                <a class="view_mores bg-main rounded-main modal-open d-inline-block py-2 px-4 text-center position-absolute" href="/mua-nuoc-khoang-o-dau-de-dam-bao-chat-luong" title="Đọc thêm">
+                                    <b class="position-relative">Đọc thêm</b>
+                                    <span></span><span></span><span></span><span></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-2 h-auto">
+                        <div class="bg-white bor-10 border h-100 item_grid p-2 position-relative">
+                            <div class="img_thm position-relative modal-open">
+                                <a href="/tai-sao-phai-phan-biet-nuoc-khoang-voi-nuoc-tinh-khiet" title="Tại sao phải phân biệt nước khoáng với nước tinh khiết?" class="effect-ming">
+                                    <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect bor-10">
+                                        <img src="~/Content/assets/placeholder_1x1a3fa.png" data-src="https:http://bizweb.dktcdn.net/100/479/406/articles/2.jpg?v=1677755449307" class="lazy d-block img img-cover position-absolute" alt="Tại sao phải phân biệt nước khoáng với nước tinh khiết?">
+                                        <div class="position-absolute w-100 h-100 overlay"></div>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="cont pt-3 text-center">
+                                <h3 class="title_blo font-weight-boldmb-0">
+                                    <a class="line_2 h-auto" href="/tai-sao-phai-phan-biet-nuoc-khoang-voi-nuoc-tinh-khiet" title="Tại sao phải phân biệt nước khoáng với nước tinh khiết?">Tại sao phải phân biệt nước khoáng với nước tinh khiết?</a>
+                                </h3>
+                                <div class="entry-date small text-center text-muted mb-2">
+                                    <svg width="13" height="13">
+                                        <use href="#svg-user" />
+                                    </svg>
+                                    Mew Theme
+                                    <svg width="13" height="13" class="ml-2">
+                                        <use href="#svg-time" />
+                                    </svg>
+                                    02/03/2023
+                                </div>
+
+
+                                <div class="line_top mb-3 sum line_2 h-auto text-center">
+                                    Nước nào mà chẳng là nước’; ‘Uống 2 lít nước mỗi ngày là tốt rồi, sao phải phân biệt’… là tâm lý chung của rất nhiều người.Tuy nhiên, nước khoáng và nước tinh khiết khác nhau về nguồn gốc, quy trình sản xuất và do đó có lợi ích khác nhau đối với sức khỏe con người.
+                                    1. Nguồn gốc: Không...
+                                </div>
+
+                                <a class="view_mores bg-main rounded-main modal-open d-inline-block py-2 px-4 text-center position-absolute" href="/tai-sao-phai-phan-biet-nuoc-khoang-voi-nuoc-tinh-khiet" title="Đọc thêm">
+                                    <b class="position-relative">Đọc thêm</b>
+                                    <span></span><span></span><span></span><span></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-2 h-auto">
+                        <div class="bg-white bor-10 border h-100 item_grid p-2 position-relative">
+                            <div class="img_thm position-relative modal-open">
+                                <a href="/ban-da-biet-cach-uong-nuoc-tot-cho-suc-khoe-chua" title="Bạn đã biết cách uống nước tốt cho sức khỏe chưa?" class="effect-ming">
+                                    <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect bor-10">
+                                        <img src="~/Content/assets/placeholder_1x1a3fa.png" data-src="https:http://bizweb.dktcdn.net/100/479/406/articles/5.jpg?v=1677755260847" class="lazy d-block img img-cover position-absolute" alt="Bạn đã biết cách uống nước tốt cho sức khỏe chưa?">
+                                        <div class="position-absolute w-100 h-100 overlay"></div>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="cont pt-3 text-center">
+                                <h3 class="title_blo font-weight-boldmb-0">
+                                    <a class="line_2 h-auto" href="/ban-da-biet-cach-uong-nuoc-tot-cho-suc-khoe-chua" title="Bạn đã biết cách uống nước tốt cho sức khỏe chưa?">Bạn đã biết cách uống nước tốt cho sức khỏe chưa?</a>
+                                </h3>
+                                <div class="entry-date small text-center text-muted mb-2">
+                                    <svg width="13" height="13">
+                                        <use href="#svg-user" />
+                                    </svg>
+                                    Mew Theme
+                                    <svg width="13" height="13" class="ml-2">
+                                        <use href="#svg-time" />
+                                    </svg>
+                                    02/03/2023
+                                </div>
+
+
+                                <div class="line_top mb-3 sum line_2 h-auto text-center">
+                                    Uống nước là hoạt động không thể thiếu để duy trì sức khỏe và sự sống của con người. Vì vậy, chúng ta cần biết&nbsp;cách uống nước tốt cho sức khỏe&nbsp;để cung cấp nước cho cơ thể theo&nbsp;cách hợp lý, khoa học, góp phần quan trọng trong việc bảo vệ sức khỏe.
+                                    Một số vai trò quan trọng của nước đối...
+                                </div>
+
+                                <a class="view_mores bg-main rounded-main modal-open d-inline-block py-2 px-4 text-center position-absolute" href="/ban-da-biet-cach-uong-nuoc-tot-cho-suc-khoe-chua" title="Đọc thêm">
+                                    <b class="position-relative">Đọc thêm</b>
+                                    <span></span><span></span><span></span><span></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-2 h-auto">
+                        <div class="bg-white bor-10 border h-100 item_grid p-2 position-relative">
+                            <div class="img_thm position-relative modal-open">
+
+                                <a href="/diem-danh-13-loai-nuoc-uong-duoc-gioi-tre-yeu-thich-nhat-viet-nam" title="Điểm danh 13 loại nước uống được giới trẻ yêu thích nhất Việt Nam" class="effect-ming">
+                                    <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect bor-10">
+                                        <img src="~/Content/assets/16023.jpg" alt="Điểm danh 13 loại nước uống được giới trẻ yêu thích nhất Việt Nam" />
+
+                                        <div class="position-absolute w-100 h-100 overlay"></div>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="cont pt-3 text-center">
+                                <h3 class="title_blo font-weight-boldmb-0">
+                                    <a class="line_2 h-auto" href="/diem-danh-13-loai-nuoc-uong-duoc-gioi-tre-yeu-thich-nhat-viet-nam" title="Điểm danh 13 loại nước uống được giới trẻ yêu thích nhất Việt Nam">Điểm danh 13 loại nước uống được giới trẻ yêu thích nhất Việt Nam</a>
+                                </h3>
+                                <div class="entry-date small text-center text-muted mb-2">
+                                    <svg width="13" height="13">
+                                        <use href="#svg-user" />
+                                    </svg>
+                                    Mew Theme
+                                    <svg width="13" height="13" class="ml-2">
+                                        <use href="#svg-time" />
+                                    </svg>
+                                    02/03/2023
+                                </div>
+
+
+                                <div class="line_top mb-3 sum line_2 h-auto text-center">
+                                    1. Trà vải dưa hấu
+                                    Trong các loại nước uống mùa hè không thể thiếu được quả vải và dưa hấu rồi, ngoài việc nhâm nhi vải và dưa hấu tươi, bạn hoàn toàn có thể dùng loại quả này để tạo ra một món đồ uống ngọt dịu tươi mát giải khát mùa hè đấy.
+                                    Món trà vải dưa hấu này...
+                                </div>
+
+                                <a class="view_mores bg-main rounded-main modal-open d-inline-block py-2 px-4 text-center position-absolute" href="/diem-danh-13-loai-nuoc-uong-duoc-gioi-tre-yeu-thich-nhat-viet-nam" title="Đọc thêm">
+                                    <b class="position-relative">Đọc thêm</b>
+                                    <span></span><span></span><span></span><span></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-button-prev ml_prev"></div>
+                <div class="swiper-button-next ml_next"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="m_brand py-4 py-lg-5">
+    <div class="container">
+        <div class="px-3 py-4 py-md-5 bg-white rounded_module">
+            <div class="brand_sl swiper-container position-relative">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a class="position-relative w-100 m-0 ratio1by3 d-block aspect" href="#">
+                            <img class="d-block img img-cover position-absolute " decoding="async" src="~/Content/assets/brand1a3fa.png" alt="MewAQUA">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="position-relative w-100 m-0 ratio1by3 d-block aspect" href="#">
+                            <img class="d-block img img-cover position-absolute " decoding="async" src="~/Content/assets/brand2a3fa.png" alt="MewAQUA">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="position-relative w-100 m-0 ratio1by3 d-block aspect" href="#">
+                            <img class="d-block img img-cover position-absolute " decoding="async" src="~/Content/assets/brand3.png" alt="MewAQUA">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="position-relative w-100 m-0 ratio1by3 d-block aspect" href="#">
+                            <img class="d-block img img-cover position-absolute " decoding="async" src="~/Content/assets/brand4.png" alt="MewAQUA">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="position-relative w-100 m-0 ratio1by3 d-block aspect" href="#">
+                            <img class="d-block img img-cover position-absolute " decoding="async" src="~/Content/assets/brand5.png" alt="MewAQUA">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="position-relative w-100 m-0 ratio1by3 d-block aspect" href="#">
+                            <img class="d-block img img-cover position-absolute " decoding="async" src="~/Content/assets/brand6.png" alt="MewAQUA">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div onclick="scrollToTop(100);" class="back_top d-flex position-fixed justify-content-center align-items-center">
+    <img alt="Lên đầu trang" src="~/Content/assets/to-top-arrow2a3fa.png">
+</div>
+
+<div class="fix-phone p-1 pt-lg-3 pb-lg-3" id="mb_bar">
+    <a href="tel:0982841466" title="Gọi mua hàng" class="mt-1 mb-1 phone-box d-flex align-items-center justify-content-center">
+        <svg width="20" height="20" class="play0">
+            <use href="#svg-phone" />
+        </svg>
+    </a>
+    <a href="https://m.me/Biahanoi183" title="Chat Facebook" target="_blank" class="mt-1 mb-1 fb-box d-flex align-items-center justify-content-center rounded-circle">
+        <svg width="26" height="24">
+            <use href="#svg-messenger" />
+        </svg>
+    </a>
+    <a href="https://zalo.me/0902688558" title="Chat Zalo" target="_blank" class="mt-1 mb-1 zalo-box d-flex align-items-center justify-content-center">
+        <svg width="32" height="32">
+            <use href="#svg-zalo" />
+        </svg>
+    </a>
+
+    <a href="he-thong-cua-hang" title="Hệ thống cửa hàng" class="mt-1 mb-1 zalo-box d-flex align-items-center justify-content-center">
+        <svg width="26" height="20">
+            <use href="#svg-map-light" />
+        </svg>
+    </a>
+</div>
+
+
+
+<script src="~/Content/assets/globala3faa3fa.js"></script>
+<link rel="preload" as="script" href="~/Content/assets/mew_plugina3fa.js" />
+<script src="~/Content/assets/mew_plugina3fa.js" type="text/javascript"></script>
+<script>const formatStoreCurrency = new Intl.NumberFormat(currencies['VND'], { style: 'currency', currency: 'VND' });</script>
+<script src="~/Content/assets/globala3fa.js"></script>
+<script src="~/Content/assets/swipera3fa.js"></script>
+<script src="~/Content/assets/mew_indexa3fa.js"></script>

@@ -1,0 +1,380 @@
+﻿
+@model List<WebBanNuocTinhKhiet.Models.SANPHAM1>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage1.cshtml";
+}
+
+
+<script>
+    $(document).ready(function () {
+        $('.filter-item--check-box input[type="radio"]').click(function () {
+            $('.filter-item--check-box').removeClass('checked');
+            $(this).closest('.filter-item--check-box').addClass('checked');
+        });
+    });
+</script>
+
+<style>
+    .checked .fa2 {
+        border-color: var(--mainColor) !important;
+        color: var(--mainColor);
+    }
+
+    .nav-item:hover > .nav-link,
+    .nav-item.active > .nav-link {
+        background: var(--mainColor);
+        border-radius: 20px;
+        filter: hue-rotate(17deg) contrast(1.2);
+    }
+</style>
+
+
+<body style="background-color:#ffffff">
+    <link href="~/Content/assets/swiper.scssa3fa.css" rel="stylesheet" />
+    <link href="~/Content/assets/bootstrap.scssa3fa.css" rel="stylesheet" />
+    <link href="~/Content/assets/mew_style_gb.scssa3fa.css" rel="stylesheet" />
+    <link href="~/Content/assets/mew_style_index.scssa3fa.css" rel="stylesheet" />
+    <link href="~/Content/assets/StyleSheet1.css" rel="stylesheet" />
+    <link href="~/Content/assets/noindex.scssa3fa.css" rel="stylesheet" />
+    <link href="~/Content/assets/collection_style.scssa3fa.css" rel="stylesheet" />
+    <link href="~/Content/assets/mew_noti.scssa3fa.css" rel="stylesheet" />
+    <link rel="preload" as="image" href="~/Content/assets/slide-img1a3fa.png" media="screen and (max-width: 480px)">
+    <link rel="preload" as="image" href="~/Content/assets/slide-img2a3fa.png" media="screen and (max-width: 480px)">
+    <script src="~/Content/assets/cash.mina3fa.js"></script>
+    <script src="~/Content/assets/axios.mina3fa.js"></script>
+    <script src="~/Content/assets/cash.mina3fa.js"></script>
+    <script src="~/Content/assets/stats.minb066.js"></script>
+
+    <div class="breadcrumbs bg-light">
+        <div class="container">
+            <ul class="breadcrumb m-0 pl-0 pr-0 pt-2 pb-2 small">
+                <li class="home">
+                    <a href="../index.html" title="Trang chủ">
+                        Trang chủ
+                    </a>
+                    <span class="slash-divider ml-2 mr-2 font-weight-normal">/</span>
+                </li>
+                <li>Tất cả sản phẩm</li>
+            </ul>
+        </div>
+    </div>
+    <section class="collection-layout mt-3 mb-4">
+        <div class="container">
+
+            <div class="banner_collection mb-3 swiper-container position-relative swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+                <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+                    <div class="swiper-slide text-center effect-ming swiper-slide-active" style="width: 1110px; margin-right: 10px;">
+                        <a href="../index.html" title="Mew AQUA">
+                            <picture class="rounded modal-open position-relative w-100 m-0 ratio1by6 d-block aspect sitdown">
+                                <source media="(min-width: 1200px)" srcset="~/Content/assets/banner_collec_1.jpg?1686886627950">
+                                <source media="(min-width: 992px)" srcset="~/Content/assets/banner_collec_1.jpg?1686886627950">
+                                <source media="(min-width: 569px)" srcset="//bizweb.dktcdn.net/thumb/large/100/479/406/themes/897580/assets/banner_collec_1.jpg?1686886627950">
+                                <source media="(min-width: 480px)" srcset="//bizweb.dktcdn.net/thumb/large/100/479/406/themes/897580/assets/banner_collec_1.jpg?1686886627950">
+                                <img class="d-block img img-cover position-absolute" src="../../bizweb.dktcdn.net/thumb/large/100/479/406/themes/897580/assets/banner_collec_1a3fa.jpg?1686886627950" alt="Mew AQUA">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-button-prev mbc_prev d-none d-md-flex swiper-button-disabled"></div>
+                <div class="swiper-button-next mbc_next d-none d-md-flex swiper-button-disabled"></div>
+            </div>
+            <link href="~/Content/assets/collection_style.scssa3fa.css" rel="stylesheet" />
+            <div class="row">
+                <div class="col-12 col-lg-3 line_right">
+
+                    <div class="aside-content d-none d-lg-block bg-main rounded-10 mb-3">
+                        <ul class="nav navbar-pills p-2 flex-column">
+                            <li class="nav-item position-relative ">
+                                @Html.ActionLink(
+                                    "Sản phẩm bán chạy",
+                                    "SanPhamBanChay",
+                                    new { LoaiSP = "SanPhamBanChay" },
+                                    new
+                                    {
+                                        @class = "nav-link font-weight-bold text-white",
+                                        @style = (ViewBag.loaiSP == "SanPhamBanChay") ? "background: var(--mainColor); border-radius: 20px; filter: hue-rotate(17deg) contrast(1.2);" : ""
+                                    }
+                                )
+                            </li>
+
+
+
+                            <li class="nav-item position-relative ">
+                                @Html.ActionLink(
+                                    "Sản phẩm nổi bật",
+                                    "SanPhamNoiBat",
+                                    new { LoaiSP = "SanPhamNoiBat" },
+                                    new
+                                    {
+                                        @class = "nav-link font-weight-bold text-white",
+                                        @style = (ViewBag.loaiSP == "SanPhamNoiBat") ? "background: var(--mainColor); border-radius: 20px; filter: hue-rotate(17deg) contrast(1.2);" : ""
+                                    }
+                                )
+                            </li>
+
+
+
+                            <li class="nav-item position-relative ">
+                                @Html.ActionLink(
+                                    "Sản phẩm mới",
+                                    "SanPhamMoi",
+                                    new { LoaiSP = "SanPhamMoi" },
+                                    new
+                                    {
+                                        @class = "nav-link font-weight-bold text-white",
+                                        @style = (ViewBag.loaiSP == "SanPhamMoi") ? "background: var(--mainColor); border-radius: 20px; filter: hue-rotate(17deg) contrast(1.2);" : ""
+                                    }
+                                )
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar sidebar_mobi m-0 p-2 p-lg-0 mt-lg-1 d-flex flex-column">
+                        <script src="~/Content/assets/search_filtera3fa.js"></script>
+                        <div class="heading d-none">
+                            <div class="h2 title-head font-weight-bold big text-uppercase mt-2 mb-0">
+                                Bộ lọc sản phẩm
+                            </div>
+                            <p class="font-italic pt-2 pb-2 mb-0">Giúp lọc nhanh sản phẩm bạn tìm kiếm</p>
+                        </div>
+                        <div class="aside-filter mb-3 modal-open w-100 pr-0 pr-md-2 order-lg-3 clearfix">
+                            <div class="filter-container row">
+                                <aside class="aside-item filter-price mb-3 col-12 col-sm-12 col-lg-12">
+                                    <div class="h2 title-head m-0 pt-2 pb-2 font-weight-bold">Lọc giá</div>
+                                    <div class="aside-content filter-group mb-1">
+                                        <div class="row">
+                                            <div class="col-6 col-lg-12 col-xl-6">
+                                                <label class="d-flex align-items-baseline pt-1 pb-1 m-0" for="filter-khoanggia-tu">
+                                                    <input type="text" id="filter-khoanggia-tu" class="form-control rounded pr-0" value="" placeholder="Giá tối thiểu ">
+                                                </label>
+                                            </div>
+                                            <div class="col-6 col-lg-12 col-xl-6">
+                                                <label class="d-flex align-items-baseline pt-1 pb-1 m-0" for="filter-khoanggia-den">
+                                                    <input type="text" id="filter-khoanggia-den" class="form-control rounded pr-0" value="" placeholder=" Giá tối đa ">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-primary js-filter-pricerange font-weight-bold rounded-10" href="javascript:;" data-value="(>=0 AND <=0)">Áp dụng</a>
+                                </aside>
+                                <aside class="aside-item filter-vendor mb-3 col-12 col-sm-4 col-lg-12">
+                                    <div class="h2 title-head m-0 pt-2 pb-2 font-weight-bold">Thương hiệu</div>
+                                    <div class="aside-content filter-group">
+                                        <ul class="filter-vendor filter-grid list-unstyled m-0">
+                                            <li class="filter-item filter-item--check-box  ">
+                                                <label class="d-flex align-items-baseline m-0 aquafina" data-filter="aquafina" for="filter-aquafina">
+                                                    <input type="checkbox" id="filter-aquafina" class="d-none" onchange="toggleFilter(this)" data-group="Hãng" data-field="vendor" value="(AQUAFINA)" data-operator="OR">
+                                                    <span class="fa2 px-2 py-1 rounded border">AQUAFINA</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item filter-item--check-box  ">
+                                                <label class="d-flex align-items-baseline m-0 lavie" data-filter="lavie" for="filter-lavie">
+                                                    <input type="checkbox" id="filter-lavie" class="d-none" onchange="toggleFilter(this)" data-group="Hãng" data-field="vendor" value="(Lavie)" data-operator="OR">
+                                                    <span class="fa2 px-2 py-1 rounded border">Lavie</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item filter-item--check-box  ">
+                                                <label class="d-flex align-items-baseline m-0 mewaqua" data-filter="mewaqua" for="filter-mewaqua">
+                                                    <input type="checkbox" id="filter-mewaqua" class="d-none" onchange="toggleFilter(this)" data-group="Hãng" data-field="vendor" value="(MewAQUA)" data-operator="OR">
+                                                    <span class="fa2 px-2 py-1 rounded border">MewAQUA</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item filter-item--check-box  ">
+                                                <label class="d-flex align-items-baseline m-0 nestle" data-filter="nestle" for="filter-nestle">
+                                                    <input type="checkbox" id="filter-nestle" class="d-none" onchange="toggleFilter(this)" data-group="Hãng" data-field="vendor" value="(Nestle)" data-operator="OR">
+                                                    <span class="fa2 px-2 py-1 rounded border">Nestle</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item filter-item--check-box  ">
+                                                <label class="d-flex align-items-baseline m-0 oasis" data-filter="oasis" for="filter-oasis">
+                                                    <input type="checkbox" id="filter-oasis" class="d-none" onchange="toggleFilter(this)" data-group="Hãng" data-field="vendor" value="(OASIS)" data-operator="OR">
+                                                    <span class="fa2 px-2 py-1 rounded border">OASIS</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item filter-item--check-box  ">
+                                                <label class="d-flex align-items-baseline m-0 whistler" data-filter="whistler" for="filter-whistler">
+                                                    <input type="checkbox" id="filter-whistler" class="d-none" onchange="toggleFilter(this)" data-group="Hãng" data-field="vendor" value="(Whistler)" data-operator="OR">
+                                                    <span class="fa2 px-2 py-1 rounded border">Whistler</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </aside><aside class="aside-item filter-type mb-3 col-12 col-sm-4 col-lg-12">
+                                    <div class="h2 title-head m-0 pt-2 pb-2 font-weight-bold">Loại</div>
+                                    <div class="aside-content filter-group">
+                                        <ul class="filter-type d-flex flex-wrap gap_8 list-unstyled m-0">
+                                            <li class="filter-item filter-item--check-box">
+                                                <label class="d-flex align-items-baseline m-0" data-filter="1 lít" for="filter-1-lit">
+                                                    <input type="checkbox" id="filter-1-lit" class="d-none" onchange="toggleFilter(this)" data-group="Loại" data-field="product_type" value="(1 lít)" data-operator="OR">
+                                                    <span class="fa2 px-2 py-1 rounded border">1 lít</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item filter-item--check-box">
+                                                <label class="d-flex align-items-baseline m-0" data-filter="2 lít" for="filter-2-lit">
+                                                    <input type="checkbox" id="filter-2-lit" class="d-none" onchange="toggleFilter(this)" data-group="Loại" data-field="product_type" value="(2 lít)" data-operator="OR">
+                                                    <span class="fa2 px-2 py-1 rounded border">2 lít</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item filter-item--check-box">
+                                                <label class="d-flex align-items-baseline m-0" data-filter="20 lít" for="filter-20-lit">
+                                                    <input type="checkbox" id="filter-20-lit" class="d-none" onchange="toggleFilter(this)" data-group="Loại" data-field="product_type" value="(20 lít)" data-operator="OR">
+                                                    <span class="fa2 px-2 py-1 rounded border">20 lít</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item filter-item--check-box">
+                                                <label class="d-flex align-items-baseline m-0" data-filter="330ml" for="filter-330ml">
+                                                    <input type="checkbox" id="filter-330ml" class="d-none" onchange="toggleFilter(this)" data-group="Loại" data-field="product_type" value="(330ml)" data-operator="OR">
+                                                    <span class="fa2 px-2 py-1 rounded border">330ml</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item filter-item--check-box">
+                                                <label class="d-flex align-items-baseline m-0" data-filter="5 lít" for="filter-5-lit">
+                                                    <input type="checkbox" id="filter-5-lit" class="d-none" onchange="toggleFilter(this)" data-group="Loại" data-field="product_type" value="(5 lít)" data-operator="OR">
+                                                    <span class="fa2 px-2 py-1 rounded border">5 lít</span>
+                                                </label>
+                                            </li>
+                                            <li class="filter-item filter-item--check-box">
+                                                <label class="d-flex align-items-baseline m-0" data-filter="6 lít" for="filter-6-lit">
+                                                    <input type="checkbox" id="filter-6-lit" class="d-none" onchange="toggleFilter(this)" data-group="Loại" data-field="product_type" value="(6 lít)" data-operator="OR">
+                                                    <span class="fa2 px-2 py-1 rounded border">6 lít</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                        <div class="filter-container__selected-filter position-relative d-none order-lg-2 rounded-10 p-2 mb-3">
+                            <div class="filter-container__selected-filter-header d-flex clearfix pt-1 pb-1">
+                                <b class="filter-container__selected-filter-header-title text-white position-relative">Lọc theo:</b>
+
+                            </div>
+                            <ul class="filter-container__selected-filter-list pl-0 m-0 list-unstyled d-block w-100 position-relative clearfix"></ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <script>
+                    // Function to set the checked attribute based on the selected sort option
+                    function setChecked(sortOption) {
+                        // Remove checked attribute from all radio buttons
+                        document.querySelectorAll('input[name="sortBy"]').forEach(function (radio) {
+                            radio.removeAttribute('checked');
+                        });
+
+                        // Set checked attribute for the selected sort option
+                        document.querySelector('.sortby-' + sortOption).setAttribute('checked', 'checked');
+                    }
+                </script>
+                <div class="col-12 col-lg-9 pt-0 pt-lg-0">
+                    <h1 class="collection-name font-weight-bold mb-lg-3 mb-2 d-none">
+                        Tất cả sản phẩm
+                    </h1>
+                    <div class="sortPagiBar pb-2 border-bottom">
+                        <ul class="aside-content filter-vendor list-unstyled mb-0 d-flex align-items-baseline gap-10">
+                            <li>
+                                <span class="h6 title-head m-0 pt-2 pb-2 font-weight-bold">Sắp xếp: </span>
+                            </li>
+                                @RenderBody()
+                        </ul>
+                    </div>
+                    <div class="collection">
+                        <div class="category-products position-relative mt-3 mb-0">
+                            <div class="row slider-items">
+
+                                @foreach (var sp in Model)
+                                {
+                                    decimal giamGia = ((sp.GiaCu - sp.GiaDB) / sp.GiaCu) * 100;
+                                    int giamGiaInt = (int)Math.Floor(giamGia);
+                                    decimal giaDB = sp.GiaDB;
+                                    decimal giaCu = sp.GiaCu;
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-6 product-grid-item-lm mb-3 ">
+                                        <div class="product-item position-relative p-2 p-lg-3 rounded bg-white h-100 border">
+                                            <div class="sale-label sale-top-right position-absolute font-weight-bold">
+                                                Giảm @giamGiaInt.%
+                                            </div>
+                                            <a href="/SanPham/Detail/@sp.MaSP" class="thumb d-block modal-open position-relative" title="Nước khoáng lọc OASIS chai 2 lít">
+                                                <picture class="position-relative w-100 m-0 ratio1by1 has-edge aspect d-block">
+                                                    <img src="@Url.Content("~/Content/assets/placeholder_1x1a3fa.png")" data-src="@Url.Content(sp.Anh)" class="d-block img img0 img1 img-cover position-absolute lazy" alt="Nước lọc AQUFINA chai 2 lít" decoding="async">
+                                                    <img src="@Url.Content("~/Content/assets/placeholder_1x1a3fa.png")" data-src="@Url.Content(sp.Anh2)" class="d-block img2 img-cover position-absolute lazy" alt="Nước lọc AQUFINA chai 2 lít" decoding="async">
+                                                </picture>
+                                            </a>
+                                            <div class="item-info mt-1 position-relative text-center">
+                                                <h3 class="item-title">
+                                                    <a class="line_2 font-weight-normal" href="/SanPham/Detail/@sp.MaSP" title="Nước khoáng lọc OASIS chai 2 lít">
+                                                        @sp.TenSP
+                                                    </a>
+                                                </h3>
+                                                <div class="item-price">
+                                                    <span class="special-price font-weight-bold">@giaDB.ToString("N0").Replace(",", ".") đ</span>
+                                                    <del class="old-price"> @giaCu.ToString("N0").Replace(",", ".") đ</del>
+                                                </div>
+                                                <form action="https://mewaqua.mysapo.net/cart/add" method="post" enctype="multipart/form-data" class="mt-2 product-item_form d-none d-md-block">
+
+                                                    <input type="hidden" name="productAlias" value="/nuoc-khoang-loc-oasis-chai-2-lit">
+                                                    <input type="hidden" name="variantId" value="82961932">
+                                                    <input type="hidden" name="quantity" value="1" class="form-control prd_quantity border rounded mb-2">
+                                                    <button class="view_mores rounded-main position-relative modal-open bg-main2 btn px-3 py-2 js-addToCart d-inline-flex mx-auto" title="Đặt hàng ngay" type="button">
+                                                        <b class="position-relative d-flex justify-content-center align-items-center">
+                                                            <svg width="14" height="14" class="mr-2">
+                                                                <use href="#svg-cart"></use>
+                                                            </svg>
+                                                            Đặt hàng ngay
+                                                        </b>
+                                                        <span></span><span></span><span></span><span></span>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="box_product_1 my-5">
+                        <h3 class="special-content_title pb-2 pt-2 mb-3 font-weight-bold position-relative border-bottom">
+                            <span class="position-relative d-inline-block">
+                                Sản phẩm đã xem
+                            </span>
+                        </h3>
+                        <div class="swiper-container position-relative js-recent-slider">
+                            <div class="swiper-wrapper js-recent-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script>
+        const colorUrlFile = 'https://bizweb.dktcdn.net/100/422/614/files/mau-270a9bbe-95be-465e-b31a-3adc5d4321b5.txt?v=1623681371120';
+        const mainColor = '#062e88';
+    </script>
+    <script>
+        var productAlias = 'nuoc-khoang-loc-oasis-chai-2-lit';
+    </script>
+    <script src="~/Content/assets/globala3faa3fa.js"></script>
+    <link rel="preload" as="script" href="~/Content/assets/mew_plugina3fa.js" />
+    <script src="~/Content/assets/mew_plugina3fa.js" type="text/javascript"></script>
+    <script>const formatStoreCurrency = new Intl.NumberFormat(currencies['VND'], { style: 'currency', currency: 'VND' });</script>
+    <script src="~/Content/assets/globala3fa.js"></script>
+    <script src="~/Content/assets/swipera3fa.js"></script>
+    <script src="~/Content/assets/mew_indexa3fa.js"></script>
+    <script src="~/Content/assets/mew_contenta3fa.js"></script>
+    <script src="~/Content/assets/mew_collection_scripta3fa.js"></script>
+    <script src="~/Content/assets/mew_recenta3fa.js"></script>
+    <script src="~/Content/assets/search_filtera3fa.js"></script>
+</body>

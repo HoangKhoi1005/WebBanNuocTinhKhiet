@@ -1,0 +1,47 @@
+﻿@model List<WebBanNuocTinhKhiet.Models.GIOHANG1>
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<body style="background-color:#ffffff">
+    <h2>@ViewBag.Title</h2>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>#ID</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Tot. Price</th>
+        </tr>
+        @{int i = 1; int totPrice = 0;}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@i</td>
+                <td>@item.SANPHAM.TenSP</td>
+                <td>
+                    @using (Html.BeginForm("UpdateQuantity", "Cart", FormMethod.Get))
+                    {
+                        <input type="number" value="@item.SoLuong" name="quan" min="1" style="width: 80px;" />
+                        <input type="hidden" name="proid" value="@item.MaSP" />
+                        <input type="submit" value="Update" class="btn btn-primary" />
+                    }
+                </td>
+                <td>
+                    @{
+                        int Price = item.SoLuong * ((int)item.SANPHAM.GiaDB);
+                        i++;
+                        totPrice += Price;
+                    }
+                    @Price.ToString("N0") VND
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="3" class="text-center fw-bold">Total Price</td>
+            <td class="text-center fw-bold">@totPrice.ToString("N0") VND</td>
+        </tr>
+    </table>
+
+    <a href="/Product">Back</a>
+</body>

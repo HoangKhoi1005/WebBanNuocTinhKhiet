@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SanPhamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CHITIETSP">
+    <Key>
+      <PropertyRef Name="MaChiTietSP" />
+    </Key>
+    <Property Name="MaChiTietSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoaiSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DungTichSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SanPhams" Relationship="Self.FK_SanPham_CHITIETSP" FromRole="CHITIETSP" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenSP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GiaCu" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="GiaDB" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Anh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgaySX" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Anh2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MaThuongHieu" Type="Int32" />
+    <Property Name="MaChiTietSP" Type="Int32" />
+    <NavigationProperty Name="CHITIETSP" Relationship="Self.FK_SanPham_CHITIETSP" FromRole="SanPham" ToRole="CHITIETSP" />
+    <NavigationProperty Name="THUONGHIEU" Relationship="Self.FK_SanPham_THUONGHIEU" FromRole="SanPham" ToRole="THUONGHIEU" />
+  </EntityType>
+  <EntityType Name="THUONGHIEU">
+    <Key>
+      <PropertyRef Name="MaThuongHieu" />
+    </Key>
+    <Property Name="MaThuongHieu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenThuongHieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SanPhams" Relationship="Self.FK_SanPham_THUONGHIEU" FromRole="THUONGHIEU" ToRole="SanPham" />
+  </EntityType>
+  <Association Name="FK_SanPham_CHITIETSP">
+    <End Role="CHITIETSP" Type="Self.CHITIETSP" Multiplicity="0..1" />
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHITIETSP">
+        <PropertyRef Name="MaChiTietSP" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaChiTietSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_THUONGHIEU">
+    <End Role="THUONGHIEU" Type="Self.THUONGHIEU" Multiplicity="0..1" />
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THUONGHIEU">
+        <PropertyRef Name="MaThuongHieu" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaThuongHieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SanPhamEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CHITIETSPs" EntityType="Self.CHITIETSP" />
+    <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
+    <EntitySet Name="THUONGHIEUx" EntityType="Self.THUONGHIEU" />
+    <AssociationSet Name="FK_SanPham_CHITIETSP" Association="Self.FK_SanPham_CHITIETSP">
+      <End Role="CHITIETSP" EntitySet="CHITIETSPs" />
+      <End Role="SanPham" EntitySet="SanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_THUONGHIEU" Association="Self.FK_SanPham_THUONGHIEU">
+      <End Role="THUONGHIEU" EntitySet="THUONGHIEUx" />
+      <End Role="SanPham" EntitySet="SanPhams" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

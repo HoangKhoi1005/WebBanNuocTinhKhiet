@@ -1,0 +1,48 @@
+﻿@model WebBanNuocTinhKhiet.Models.SANPHAM1
+
+@{
+    ViewBag.Title = "Remove";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage1.cshtml";
+}
+<body style="background-color:aliceblue">
+    <h2>Remove</h2>
+
+    @using (Html.BeginForm("Remove", "SanPham", new { Id = Model.MaSP }, FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.MaSP)
+
+        <table class="table">
+            <tr>
+                <th>Mã sản phẩm</th>
+                <td>@Model.MaSP</td>
+            </tr>
+            <tr>
+                <th>Tên sản phẩm</th>
+                <td>@Model.TenSP</td>
+            </tr>
+            <tr>
+                <th>Giá cũ</th>
+                <td>@Model.GiaCu</td>
+            </tr>
+            <tr>
+                <th>Giá đặc biệt</th>
+                <td>@Model.GiaDB</td>
+            </tr>
+            <tr>
+                <th>Thông tin</th>
+                <td>@Model.MoTa</td>
+            </tr>
+            <tr>
+                <th>Hình ảnh 1</th>
+                <td><img src="@Model.Anh" style="width:100px" /></td>
+            </tr>
+            <tr>
+                <th>Hình ảnh 2</th>
+                <td><img src="@Model.Anh2" style="width:100px" /></td>
+            </tr>
+        </table>
+
+        <button type="submit" class="btn btn-success">Xóa</button>
+        @Html.ActionLink("Hủy", "Index", "SanPham", null, new { @class = "btn btn-danger" })
+    }
+</body>
